@@ -1,0 +1,9 @@
+.with-cart { display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap; }
+.with-cart .catalog, .with-cart .product-page { flex: 1 1 28rem; }
+.with-cart aside { flex: 0 0 18rem; }
+#cart { border: 1px solid #ccc; border-radius: 6px; padding: 0.6rem 1rem; background: #fafafa; }
+#cart table { width: 100%; }
+#cart td.buttons { white-space: nowrap; }
+#cart td.buttons form { display: inline; }
+.cart-buttons { display: flex; gap: 0.5rem; margin-top: 0.6rem; }
+form.button_to { display: inline; }

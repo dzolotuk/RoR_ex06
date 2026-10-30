@@ -1,0 +1,14 @@
+<nav id="navbar">
+  <%= link_to 'acme', root_path, class: 'brand' %>
+  <%= link_to 'Catalog', products_path %>
+  <%= link_to 'Brands', brands_path %>
+  <%= link_to 'Cart', cart_path %>
+  <% if user_signed_in? %>
+    <span>Logged as <%= current_user.name %></span>
+    <%= link_to 'My account', edit_user_registration_path %>
+    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'link' %>
+  <% else %>
+    <%= link_to 'Login', new_user_session_path %>
+    <%= link_to 'Register', new_user_registration_path %>
+  <% end %>
+</nav>

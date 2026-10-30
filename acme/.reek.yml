@@ -1,0 +1,13 @@
+# Code smells settings (RubyCritic uses reek).
+detectors:
+  IrresponsibleModule:
+    enabled: false
+  InstanceVariableAssumption:
+    enabled: false
+exclude_paths:
+  - bin
+  - config
+  - db
+  - node_modules
+  - test
+  - vendor

@@ -1,0 +1,4 @@
+# Settings of RubyCritic: it judges the code of the application (the tests are not part of it).
+paths:
+  - app
+no_browser: true

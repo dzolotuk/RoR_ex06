@@ -1,0 +1,16 @@
+<% if paginator.records.empty? %>
+  <p>There is no product yet.</p>
+<% else %>
+  <ul class="products">
+    <% paginator.records.each do |product| %>
+      <li class="product">
+        <%= link_to image_tag(product.pict.thumb.url, alt: product.name, class: 'thumb', loading: 'lazy'), product_path(product) %>
+        <%= link_to product.name, product_path(product), class: 'name' %>
+        <span class="brand"><%= link_to product.brand.name, brand_path(product.brand) %></span>
+        <span class="price"><%= price_tag(product.price) %></span>
+        <%= button_to 'Add to cart', cart_items_path(product_id: product.id) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= render 'shared/pagination', paginator: paginator %>
+<% end %>

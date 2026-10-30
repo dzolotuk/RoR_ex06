@@ -1,0 +1,7 @@
+ul.products, ul.brands { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: 1rem; }
+li.product, li.brand-card { border: 1px solid #ddd; border-radius: 6px; padding: 0.6rem; display: flex; flex-direction: column; gap: 0.3rem; }
+img.thumb { width: 100%; max-width: 200px; height: auto; aspect-ratio: 1; object-fit: cover; }
+.price { font-weight: bold; }
+.product-page { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.product-page .description { max-width: 40rem; }
+.pagination { text-align: center; }

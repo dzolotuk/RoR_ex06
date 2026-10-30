@@ -1,0 +1,11 @@
+<h1>Brands</h1>
+
+<ul class="brands">
+  <% @brands.each do |brand| %>
+    <li class="brand-card">
+      <%= link_to image_tag(brand.avatar.thumb.url, alt: brand.name, class: 'thumb', loading: 'lazy'), brand_path(brand) %>
+      <%= link_to brand.name, brand_path(brand), class: 'name' %>
+      <span><%= pluralize(brand.products_count, 'product') %></span>
+    </li>
+  <% end %>
+</ul>

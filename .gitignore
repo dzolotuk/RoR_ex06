@@ -1,0 +1,36 @@
+# Bundler
+/acme/.bundle
+/acme/vendor/bundle
+
+# Environment files (secrets: CLOUDINARY_URL, DATABASE_URL, ...)
+/acme/.env*
+!/acme/.env*.erb
+
+# Logs and temporary files
+/acme/log/*
+/acme/tmp/*
+!/acme/log/.keep
+!/acme/tmp/.keep
+/acme/tmp/pids/*
+!/acme/tmp/pids/
+!/acme/tmp/pids/.keep
+
+# Files uploaded in development (production uses Cloudinary)
+/acme/public/uploads
+/acme/storage/*
+!/acme/storage/.keep
+
+# Compiled assets
+/acme/public/assets
+
+# Keys
+/acme/config/master.key
+
+# RubyCritic reports
+/acme/tmp/rubycritic
+
+# Editors and OS
+.DS_Store
+*.swp
+.idea/
+.vscode/

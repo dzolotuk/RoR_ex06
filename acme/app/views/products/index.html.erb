@@ -1,0 +1,14 @@
+<h1>Catalog</h1>
+
+<% if can? :access, :rails_admin %>
+  <p class="admin-link"><%= link_to 'Administration panel', rails_admin_path %></p>
+<% end %>
+
+<div class="with-cart">
+  <div class="catalog">
+    <%= render 'products/grid', paginator: @paginator %>
+  </div>
+  <aside>
+    <%= render 'carts/cart', cart: current_cart %>
+  </aside>
+</div>

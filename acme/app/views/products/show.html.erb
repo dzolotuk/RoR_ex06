@@ -1,0 +1,19 @@
+<h1><%= @product.name %></h1>
+
+<div class="with-cart">
+  <div class="product-page">
+    <%= image_tag @product.pict.thumb.url, alt: @product.name, class: 'thumb' %>
+    <div>
+      <p>Brand: <%= link_to @product.brand.name, brand_path(@product.brand) %></p>
+      <p class="price"><%= price_tag(@product.price) %></p>
+      <p class="description"><%= @product.description %></p>
+      <%= button_to 'Add to cart', cart_items_path(product_id: @product.id) %>
+      <p><%= link_to 'Full size image', @product.pict.url %></p>
+    </div>
+  </div>
+  <aside>
+    <%= render 'carts/cart', cart: current_cart %>
+  </aside>
+</div>
+
+<p><%= link_to '« Back to the catalog', products_path %></p>

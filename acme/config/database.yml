@@ -1,0 +1,23 @@
+# PostgreSQL. The role (user) and the template database are created once on the machine,
+# the commands are in the README ("PostgreSQL setup").
+# Every value can be changed with an environment variable; in production DATABASE_URL wins.
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  template: <%= ENV.fetch("ACME_DB_TEMPLATE", "template_acme") %>
+  host: <%= ENV.fetch("ACME_DB_HOST", "localhost") %>
+  username: <%= ENV.fetch("ACME_DB_USER", "acme") %>
+  password: <%= ENV.fetch("ACME_DB_PASSWORD", "acme") %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: acme_development
+
+test:
+  <<: *default
+  database: acme_test
+
+production:
+  <<: *default
+  database: acme_production
